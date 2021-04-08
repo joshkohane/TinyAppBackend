@@ -2,7 +2,12 @@ const express = require('express');
 const app = express();
 
 const mongoose = require('mongoose');
+const db = require('./config/keys').mongoURI;
 
+mongoose
+    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Mongo is up'))
+    .catch(err => console.log(err))
 
 app.get('/', (req, res) => res.send('This works, huzzah!'));
 
