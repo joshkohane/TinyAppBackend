@@ -1,0 +1,21 @@
+### Create a question
+
+POST http://127.0.0.1:5000/api/questions
+Content-Type: application/json
+
+{
+    "name": "What's happening",
+    "text": "This is a beautiful note",
+    "repo": "repo",
+    "live": "live"
+}
+
+### View questions
+GET http://127.0.0.1:5000/api/questions
+Content-Type: application/json
+
+### Edit a question
+
+### Delete a question
+DELETE http://127.0.0.1:5000/api/questions/606f574dcd1234124d8b4f76
+Content-Type: application/json
