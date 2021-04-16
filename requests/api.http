@@ -15,6 +15,12 @@ GET http://127.0.0.1:5000/api/questions
 Content-Type: application/json
 
 ### Edit a question
+PATCH http://127.0.0.1:5000/api/questions/606f541ecd1234124d8b4f74
+Content-Type: application/json
+
+{
+    "answered": true
+}
 
 ### Delete a question
 DELETE http://127.0.0.1:5000/api/questions/606f574dcd1234124d8b4f76

@@ -21,6 +21,12 @@ router.post('/', (req, res) => {
         .catch(err => res.status(404).json(err));
 })
 
+router.patch('/:question_id', (req, res) => {
+    Question.findOneAndUpdate({_id: req.params.question_id}, {$set: req.body}, {new: true, useFindAndModify: false})
+        .then(question => res.json(question))
+            .catch(err => res.status(404).json(err))
+})
+
 router.delete(`/:quesion_id`, (req, res) => {
     Question.findOneAndDelete({ _id: req.params.quesion_id })
         .then(question => res.json({ _id: question._id }))
